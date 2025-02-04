@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse Shell Generator</title>
+    <link rel="stylesheet" href="styles1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Reverse Shell Generator</h1>
+        
+        <div class="input-section">
+            <label for="ip">Attacker IP:</label>
+            <input type="text" id="ip" placeholder="e.g. 192.168.1.100">
+            
+            <label for="port">Port:</label>
+            <input type="number" id="port" placeholder="e.g. 4444">
+        </div>
+
+        <div class="os-selection">
+            <h2>Select Target OS</h2>
+            <div class="os-buttons">
+                <button onclick="generateShell('bash')">Bash</button>
+                <button onclick="generateShell('python')">Python</button>
+                <button onclick="generateShell('netcat')">Netcat</button>
+                <button onclick="generateShell('perl')">Perl</button>
+                <button onclick="generateShell('php')">PHP</button>
+                <button onclick="generateShell('ruby')">Ruby</button>
+                <button onclick="generateShell('powershell')">PowerShell</button>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <h2>Generated Reverse Shells:</h2>
+            <div id="shellOutputContainer" class="shell-options">
+                <div class="shell-option">
+                    <h3>Option 1</h3>
+                    <pre id="shellOutput1"></pre>
+                    <button onclick="copyToClipboard('shellOutput1')">📋 Copy Option 1</button>
+                </div>
+                <div class="shell-option">
+                    <h3>Option 2</h3>
+                    <pre id="shellOutput2"></pre>
+                    <button onclick="copyToClipboard('shellOutput2')">📋 Copy Option 2</button>
+                </div>
+                <div class="shell-option">
+                    <h3>Option 3</h3>
+                    <pre id="shellOutput3"></pre>
+                    <button onclick="copyToClipboard('shellOutput3')">📋 Copy Option 3</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="listener-section">
+            <h2>Netcat Listener Command</h2>
+            <div class="listener-options">
+                <div class="listener-option">
+                    <h3>Basic TCP Listener</h3>
+                    <pre id="listenerOutput1"></pre>
+                    <button onclick="copyToClipboard('listenerOutput1')">📋 Copy Listener Command</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+</html>
